@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        <table>
+
+            <caption>pessoas por idade</caption>
+
+            <thead>
+                <tr>
+                    <th>nome</th>
+                    <th>idade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>tauan</th>
+                    <th>23</th>
+                </tr>
+                <tr>
+                    <th>licy</th>
+                    <th>24</th>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>total pessoas</th>
+                    <th>2</th>
+                </tr>
+            </tfoot>
+        </table>
+    -->
+    <table>
+        <caption>Produtos produzidos por loja</caption>
+
+        <colgroup>
+            <col>
+            <col span="2" style="background-color: red;">
+            <col span="2" style="background-color: blue;"> 
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th rowspan="2"></th>
+                <th colspan="2" scope="colgroup">afonso pena</th>
+                <th colspan="2" scope="colgroup">antonio pereira</th>
+            </tr>
+
+            <tr>
+                <th scope="col">Produzidos</th>
+                <th scope="col">Vendidos</th>
+                <th scope="col">Produzidos</th>
+                <th scope="col">Vendidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Vassoura</th>
+                <th scope="row">50</th>
+                <th scope="row">30</th>
+                <th scope="row">20</th>
+                <th scope="row">20</th>
+            </tr>
+            <tr>
+                <th>baldes</th>
+                <th>50</th>
+                <th>30</th>
+                <th>20</th>
+                <th>20</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

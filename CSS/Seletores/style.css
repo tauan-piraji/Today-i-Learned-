@@ -1,0 +1,11 @@
+div{
+    margin: 50px;
+    display: flex;
+}
+#div1{
+    color: red;
+}
+.div2{
+    color: blue;
+    font-size: 40px;
+}

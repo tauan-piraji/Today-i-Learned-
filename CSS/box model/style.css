@@ -1,0 +1,8 @@
+#d{
+    display: flex;
+}
+div{
+    background-color: black;
+    padding: 100px;
+    margin: 10px;
+}
