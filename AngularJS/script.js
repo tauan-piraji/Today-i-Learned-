@@ -8,7 +8,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     $http.get("http://localhost:3412/contatos").then(function (resposta) {
       $scope.contatos = resposta.data;
     }, function (resposta, status) {
-      $scope.message = "Aconteceu um problema: " + resposta;
+      $scope.message = "Aconteceu um problema: " + resposta.status;
     });
   };
 

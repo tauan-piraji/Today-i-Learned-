@@ -18,6 +18,7 @@
 <body ng-controller="listaTelefonicaCtrl">
   <div class="jumbotron">
     <h3>{{app}}</h3>
+    {{message}}
     <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você esta buscando?"/>
     <table class="table" ng-show="contatos.length > 0">
     <!--ng-if="" cria e apaga elementos, melhor para n consumir memoria//ng-show apenas esconde-->
