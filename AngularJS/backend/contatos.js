@@ -13,6 +13,7 @@ var contatos = [
   {nome: "Brunera", telefone: "77774-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
   {nome: "Aline", telefone: "85474-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
   {nome: "Hugo", telefone: "94477-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
+  {nome: "Licy", telefone: "94557-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
   {nome: "Victor", telefone: "9999-8774", data: new Date(), operadora:{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}}
 ];
 var operadoras = [
