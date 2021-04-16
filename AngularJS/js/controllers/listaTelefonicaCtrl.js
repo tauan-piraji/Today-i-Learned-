@@ -1,4 +1,3 @@
-angular.module("listaTelefonica", []);
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $http) {
   $scope.app= "Lista Telefonica";
   $scope.contatos=[];
