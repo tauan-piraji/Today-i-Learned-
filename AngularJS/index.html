@@ -60,9 +60,7 @@
     <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar contato</button>
     <button class="btn btn-danger btn-block" ng-click="excluirContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Excluir contato</button>
   </div>
-  <footer style="text-align:center;">
-    Criado por Tauan Oliveira
-  </footer>
+  <div ng-include="footer.html"></div>
 </body>
 
 </html>
