@@ -5,16 +5,16 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 
 var contatos = [
-	{nome: "Bruna", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
-	{nome: "Sandra", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}},
-	{nome: "Mariana", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
-  {nome: "Tauan", telefone: "9999-98888", data: new Date(), operadora:{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}},
-  {nome: "Pedrexxx", telefone: "99889-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
-  {nome: "Brunera", telefone: "77774-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
-  {nome: "Aline", telefone: "85474-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
-  {nome: "Hugo", telefone: "94477-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
-  {nome: "Licy", telefone: "94557-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
-  {nome: "Victor", telefone: "9999-8774", data: new Date(), operadora:{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}}
+	{nome: "Bruna da silva", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
+	{nome: "Sandra casagrande", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}},
+	{nome: "Mariana carvalho", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
+  {nome: "Tauan oliveira da silva", telefone: "9999-98888", data: new Date(), operadora:{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}},
+  {nome: "Pedrexxx cabuloso", telefone: "99889-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
+  {nome: "Brunera mal grau", telefone: "77774-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
+  {nome: "Aline antones", telefone: "85474-8888", data: new Date(), operadora:{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2}},
+  {nome: "Hugo cerom", telefone: "94477-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
+  {nome: "Liciely de carvalho chaves", telefone: "94557-7988", data: new Date(), operadora:{nome: "Tim", codigo: 41, categoria: "Celular", preco: 3}},
+  {nome: "Victor ramos", telefone: "9999-8774", data: new Date(), operadora:{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1}}
 ];
 var operadoras = [
 	{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
