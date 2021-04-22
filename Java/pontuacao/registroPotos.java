@@ -1,5 +1,5 @@
 public class registroPotos{
-    public void fazerUmComentario(Usuario u){
+    public void fazerUmComentario(Usuario u){   
         u.pontos += 3;
     }
     public void criarUmTopico(Usuario u){
