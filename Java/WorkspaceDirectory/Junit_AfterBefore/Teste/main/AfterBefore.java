@@ -2,7 +2,7 @@ package main;
 
 import org.junit.*;
 
-class AfterBefore {
+public class AfterBefore{
 
 	@Before
 	public void before() {
