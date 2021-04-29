@@ -7,7 +7,7 @@ public abstract class CarroCorrida {
 	protected String nome;
 
 	public CarroCorrida(String nome, int velocidadeMax){
-		this.velocidade = 0;
+		velocidade = 0;
 		this.nome = nome;
 		this.velocidadeMax = velocidadeMax;
 	}

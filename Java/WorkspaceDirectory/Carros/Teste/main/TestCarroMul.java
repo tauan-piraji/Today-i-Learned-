@@ -9,10 +9,10 @@ public class TestCarroMul {
 
 	CarroMul c;
 	
-	 @Before
-	 public void criarCarro() {
-		 c = new CarroMul("BMW", 1.7, 250, 0);
-	 }
+	@Before
+	public void criarCarro() {
+		 c = new CarroMul("BMW", 1.7, 250);
+	}
 	
 	@Test
 	public void testNome() {
@@ -26,8 +26,9 @@ public class TestCarroMul {
 	 
 	@Test
 	public void testAceleracao() {
-		for(int i=0; i<8; i++)
+		for(int i=0; i<8; i++){
 			c.acelerar();
+		}
+		assertEquals(250, c.getVelocidade());
 	}
-
 }
