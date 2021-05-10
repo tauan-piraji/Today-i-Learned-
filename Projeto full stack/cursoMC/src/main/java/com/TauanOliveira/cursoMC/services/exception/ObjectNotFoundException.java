@@ -1,4 +1,4 @@
-package com.TauanOliveira.cursoMC.services.Exception;
+package com.TauanOliveira.cursoMC.services.exception;
 
 public class ObjectNotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;

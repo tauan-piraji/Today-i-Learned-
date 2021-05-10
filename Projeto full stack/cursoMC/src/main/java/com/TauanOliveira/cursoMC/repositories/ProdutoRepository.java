@@ -7,5 +7,4 @@ import com.TauanOliveira.cursoMC.domain.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
-
 }
