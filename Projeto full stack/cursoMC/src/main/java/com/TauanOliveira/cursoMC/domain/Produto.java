@@ -12,11 +12,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Produto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 	
 	private Integer id;
@@ -28,6 +29,8 @@ public class Produto implements Serializable{
 		joinColumns = @JoinColumn(name= "produto_id"),
 		inverseJoinColumns = @JoinColumn(name = "categoria_id")
 	)
+	
+	@JsonIgnore
 	private List<Categoria> categorias = new ArrayList<>();
 	
 	public Produto() {
