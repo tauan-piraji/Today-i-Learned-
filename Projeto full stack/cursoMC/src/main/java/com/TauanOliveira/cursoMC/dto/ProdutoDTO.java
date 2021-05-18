@@ -2,19 +2,18 @@ package com.TauanOliveira.cursoMC.dto;
 
 import java.io.Serializable;
 
-import com.TauanOliveira.cursoMC.domain.Categoria;
+import com.TauanOliveira.cursoMC.domain.Produto;
 
-public class CategoriaDTO implements Serializable{
+public class ProdutoDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	
 	private String nome;
 	
-	public CategoriaDTO() {
+	public ProdutoDTO() {
 	}
 	
-	public CategoriaDTO(Categoria obj) {
+	public ProdutoDTO(Produto obj) {
 		id = obj.getId();
 		nome = obj.getNome();
 	}
