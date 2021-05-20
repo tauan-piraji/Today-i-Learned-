@@ -13,6 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import com.TauanOliveira.cursoMC.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -24,7 +27,13 @@ public class Cliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotBlank(message="Campo obrigatorio")
+	@Size(min=7, max=80, message="deve ter de 4 a 80 caracteres")
 	private String nome;
+	
+	@NotBlank(message="Campo obrigatorio")
+	@Email(message="E-mail inválido")
 	private String email;
 	private String cpfOrCnpj;
 	private Integer tipoCliente;
@@ -48,11 +57,15 @@ public class Cliente implements Serializable{
 		this.nome = nome;
 		this.email = email;
 		this.cpfOrCnpj = cpfOrCnpj;
-		this.tipoCliente = tipoCliente.getCod();
+		this.tipoCliente = (tipoCliente == null) ? null : tipoCliente.getCod();
 	}
 
 	public Integer getId() {
 		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {

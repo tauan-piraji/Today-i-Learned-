@@ -108,28 +108,39 @@ public class CursoMcApplication implements CommandLineRunner {
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
+		Estado est3 = new Estado(null, "Santa Catarina");
 		
 		Cidade c1 = new Cidade(null, "Ubewlândia", est1);
 		Cidade c2 = new Cidade(null, "São Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
+		Cidade c4 = new Cidade(null, "Criciúma", est3);
+		Cidade c5 = new Cidade(null, "Florianopolis", est3);
 				
 		est1.getCidade().addAll(Arrays.asList(c1));
 		est2.getCidade().addAll(Arrays.asList(c2, c3));
+		est3.getCidade().addAll(Arrays.asList(c4, c5));
 
-		estadoRepository.saveAll(Arrays.asList(est1, est2));
-		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
+		estadoRepository.saveAll(Arrays.asList(est1, est2, est3));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3, c4, c5));
 		
-		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
+		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912724", TipoCliente.PESSOAFISICA);
+		Cliente cli2 = new Cliente(null, "Tauan Oliveira Da Silva", "tauan-piraji@gmail.com", "98975518045", TipoCliente.PESSOAFISICA);
+		Cliente cli3 = new Cliente(null, "Liciely De Carvalho Chaves", "licy-rainha@gmail.com", "44256885187", TipoCliente.PESSOAFISICA);
 		
 		cli1.getTelefones().addAll(Arrays.asList("977445861", "955662145"));
+		cli2.getTelefones().addAll(Arrays.asList("999755540", "925482145"));
+		cli3.getTelefones().addAll(Arrays.asList("988182050", "959654255"));
 		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
+		Endereco e3 = new Endereco(null, "Rua manoel das flores", "190", "Apto 303", "Santa maria", "38220834", cli3, c4);
 		
 		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
+		cli2.getEnderecos().addAll(Arrays.asList(e3));
+		cli3.getEnderecos().addAll(Arrays.asList(e3));
 		
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		clienteRepository.saveAll(Arrays.asList(cli1, cli2, cli3));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2, e3));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm");
 		
