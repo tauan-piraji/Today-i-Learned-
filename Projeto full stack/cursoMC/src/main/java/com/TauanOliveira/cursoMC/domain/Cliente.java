@@ -6,13 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -38,7 +32,7 @@ public class Cliente implements Serializable{
 	private String cpfOrCnpj;
 	private Integer tipoCliente;
 	
-	@OneToMany(mappedBy="cliente")
+	@OneToMany(mappedBy="cliente", cascade = CascadeType.ALL)//cascade: o que for feito com clientes roda em cascata para todos seus pedidos EX: se deletar clientes deleta todos seus pedidos
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@JsonIgnore

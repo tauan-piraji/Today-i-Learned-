@@ -3,6 +3,7 @@ package com.TauanOliveira.cursoMC.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.TauanOliveira.cursoMC.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -30,6 +31,9 @@ public class ClienteService {
 	
 	@Autowired
 	private CidadeRepository cidadeRepository;
+
+	@Autowired
+	private EnderecoRepository enderecoRepository;
 	
 	public Cliente find(Integer id) throws ObjectNotFoundException{
 		Optional<Cliente> obj = repo.findById(id);
@@ -64,19 +68,25 @@ public class ClienteService {
 		}
 		return cli;
 	}
+
+	private void updateData(Cliente newObj, Cliente obj) {
+		newObj.setNome(obj.getNome());
+		newObj.setEmail(obj.getEmail());
+	}
 	
 	public Cliente update(Cliente obj) {
 		Cliente newObj = find(obj.getId());
 		updateData(newObj, obj);
 		return repo.save(newObj);
 	}
-	
+
 	@Transactional
 	public Cliente insert(Cliente obj) {
-		obj.setId(null);
-		return repo.save(obj);
+		obj = repo.save(obj);
+		enderecoRepository.saveAll(obj.getEnderecos());
+		return obj;
 	}
-	
+
 	public void delete(Integer id) {
 		find(id);
 		try {
@@ -85,9 +95,5 @@ public class ClienteService {
 			throw new DataIntegrityException("Não E possível Excluir porque há entidades relacionadas");
 		}
 	}
-	
-	private void updateData(Cliente newObj, Cliente obj) {
-		newObj.setNome(obj.getNome());
-		newObj.setEmail(obj.getEmail());
-	}
+
 } 

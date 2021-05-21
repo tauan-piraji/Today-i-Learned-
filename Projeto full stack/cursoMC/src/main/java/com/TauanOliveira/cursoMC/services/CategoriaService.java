@@ -38,10 +38,13 @@ public class CategoriaService {
 	}
 	
 	public Categoria insert(Categoria obj) {
-		obj.setId(null);
 		return repo.save(obj);
 	}
-	
+
+	private void updateData(Categoria newObj, Categoria obj) {
+		newObj.setNome(obj.getNome());
+	}
+
 	public Categoria fromDTO(CategoriaDTO objDTO) {
 		return new Categoria(objDTO.getId(), objDTO.getNome());
 	}
@@ -60,9 +63,4 @@ public class CategoriaService {
 			throw new DataIntegrityException("Não E possível Excluir uma categoria que possui produto");
 		}
 	}
-	
-	private void updateData(Categoria newObj, Categoria obj) {
-		newObj.setNome(obj.getNome());
-	}
-	
 }
