@@ -29,7 +29,9 @@ public class Cliente implements Serializable{
 	@NotBlank(message="Campo obrigatorio")
 	@Email(message="E-mail inválido")
 	private String email;
-	private String cpfOrCnpj;
+
+	@NotBlank(message="Campo obrigatorio")
+	private String cpfOuCnpj;
 	private Integer tipoCliente;
 	
 	@OneToMany(mappedBy="cliente", cascade = CascadeType.ALL)//cascade: o que for feito com clientes roda em cascata para todos seus pedidos EX: se deletar clientes deleta todos seus pedidos
@@ -38,7 +40,7 @@ public class Cliente implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
-	
+
 	@ElementCollection
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>();
@@ -50,7 +52,7 @@ public class Cliente implements Serializable{
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
-		this.cpfOrCnpj = cpfOrCnpj;
+		this.cpfOuCnpj = cpfOrCnpj;
 		this.tipoCliente = (tipoCliente == null) ? null : tipoCliente.getCod();
 	}
 
@@ -78,12 +80,12 @@ public class Cliente implements Serializable{
 		this.email = email;
 	}
 
-	public String getCpfOrCnpj() {
-		return cpfOrCnpj;
+	public String getCpfOuCnpj() {
+		return cpfOuCnpj;
 	}
 
-	public void setCpfOrCnpj(String cpfOrCnpj) {
-		this.cpfOrCnpj = cpfOrCnpj;
+	public void setCpfOuCnpj(String cpfOrCnpj) {
+		this.cpfOuCnpj = cpfOrCnpj;
 	}
 
 	public TipoCliente getTipoCliente() {

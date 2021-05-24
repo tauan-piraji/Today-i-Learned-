@@ -1,23 +1,31 @@
 package com.TauanOliveira.cursoMC.dto;
 
+import com.TauanOliveira.cursoMC.services.validation.ClienteInsert;
+
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
+@ClienteInsert
 public class ClienteNewDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String nome;
 	private String email;
-	private String cpfOrCnpj;
+	private String cpfOuCnpj;
 	private Integer tipoCliente;
-	
+
+	@NotBlank(message="Campo obrigatorio")
 	private String telefone1;
 	private String telefone2;
 	private String telefone3;
-	
+
+	@NotBlank(message="Campo obrigatorio")
 	private String logradouro;
+	@NotBlank(message="Campo obrigatorio")
 	private String numero;
 	private String complemento;
 	private String bairro;
+	@NotBlank(message="Campo obrigatorio")
 	private String cep;
 	
 	private Integer cidadeId;
@@ -41,12 +49,12 @@ public class ClienteNewDTO implements Serializable{
 		this.email = email;
 	}
 
-	public String getCpfOrCnpj() {
-		return cpfOrCnpj;
+	public String getCpfOuCnpj() {
+		return cpfOuCnpj;
 	}
 
-	public void setCpfOrCnpj(String cpfOrCnpj) {
-		this.cpfOrCnpj = cpfOrCnpj;
+	public void setCpfOuCnpj(String cpfOuCnpj) {
+		this.cpfOuCnpj = cpfOuCnpj;
 	}
 
 	public Integer getTipoCliente() {
