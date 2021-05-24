@@ -3,7 +3,17 @@ package com.TauanOliveira.cursoMC.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.TauanOliveira.cursoMC.domain.Cidade;
+import com.TauanOliveira.cursoMC.domain.Cliente;
+import com.TauanOliveira.cursoMC.domain.Endereco;
+import com.TauanOliveira.cursoMC.domain.enums.TipoCliente;
+import com.TauanOliveira.cursoMC.dto.ClienteDTO;
+import com.TauanOliveira.cursoMC.dto.ClienteNewDTO;
+import com.TauanOliveira.cursoMC.repositories.ClienteRepository;
 import com.TauanOliveira.cursoMC.repositories.EnderecoRepository;
+import com.TauanOliveira.cursoMC.services.exception.DataIntegrityException;
+import com.TauanOliveira.cursoMC.services.exception.ObjectNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -12,27 +22,12 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.TauanOliveira.cursoMC.domain.Cidade;
-import com.TauanOliveira.cursoMC.domain.Cliente;
-import com.TauanOliveira.cursoMC.domain.Endereco;
-import com.TauanOliveira.cursoMC.domain.enums.TipoCliente;
-import com.TauanOliveira.cursoMC.dto.ClienteDTO;
-import com.TauanOliveira.cursoMC.dto.ClienteNewDTO;
-import com.TauanOliveira.cursoMC.repositories.CidadeRepository;
-import com.TauanOliveira.cursoMC.repositories.ClienteRepository;
-import com.TauanOliveira.cursoMC.services.exception.DataIntegrityException;
-import com.TauanOliveira.cursoMC.services.exception.ObjectNotFoundException;
-
 @Service
 public class ClienteService {
 	
 	@Autowired
 	private ClienteRepository repo;
 	
-	@Autowired
-	private CidadeRepository cidadeRepository;
-
-	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
 	public Cliente find(Integer id) throws ObjectNotFoundException{
