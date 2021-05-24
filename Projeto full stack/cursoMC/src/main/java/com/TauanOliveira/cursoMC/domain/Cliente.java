@@ -28,6 +28,7 @@ public class Cliente implements Serializable{
 	
 	@NotBlank(message="Campo obrigatorio")
 	@Email(message="E-mail inválido")
+	@Column(unique = true)
 	private String email;
 
 	@NotBlank(message="Campo obrigatorio")
