@@ -80,14 +80,22 @@ public class CursoMcApplication implements CommandLineRunner {
 		Produto p11 = new Produto(null,"Escultura de metal", 108.50);
 		Produto p12 = new Produto(null,"Espelho redondo", 49.90);
 		Produto p13 = new Produto(null,"Blue de chanel", 99.00);
+		Produto p14 = new Produto(null,"Mesa de escritório", 300.00);
+		Produto p15 = new Produto(null,"Toalha", 50.00);
+		Produto p16 = new Produto(null,"Colcha", 200.00);
+		Produto p17 = new Produto(null,"Tv true color", 1200.00);
+		Produto p18 = new Produto(null,"Roçadeira", 800.00);
+		Produto p19 = new Produto(null,"Abajuor", 100.00);
+		Produto p20 = new Produto(null,"Pendente", 180.00);
+		Produto p21 = new Produto(null,"Shampoo", 90.00);
 
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
-		cat2.getProdutos().addAll(Arrays.asList(p2));
-		cat3.getProdutos().addAll(Arrays.asList(p4, p5, p6));
-		cat4.getProdutos().addAll(Arrays.asList(p1, p2, p3, p7, p8));
-		cat5.getProdutos().addAll(Arrays.asList(p9, p10));
-		cat6.getProdutos().addAll(Arrays.asList(p11, p12));
-		cat7.getProdutos().addAll(Arrays.asList(p13));
+		cat2.getProdutos().addAll(Arrays.asList(p2, p14));
+		cat3.getProdutos().addAll(Arrays.asList(p4, p5, p6, p15, p16));
+		cat4.getProdutos().addAll(Arrays.asList(p1, p2, p3, p7, p8, p17));
+		cat5.getProdutos().addAll(Arrays.asList(p9, p10, p18));
+		cat6.getProdutos().addAll(Arrays.asList(p11, p12, p19, p20));
+		cat7.getProdutos().addAll(Arrays.asList(p13, p21));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1, cat4));
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2, cat4));
@@ -102,9 +110,17 @@ public class CursoMcApplication implements CommandLineRunner {
 		p11.getCategorias().addAll(Arrays.asList(cat6, cat2));
 		p12.getCategorias().addAll(Arrays.asList(cat6, cat2));
 		p13.getCategorias().addAll(Arrays.asList(cat7));
+		p14.getCategorias().addAll(Arrays.asList(cat2));
+		p15.getCategorias().addAll(Arrays.asList(cat3));
+		p16.getCategorias().addAll(Arrays.asList(cat3));
+		p17.getCategorias().addAll(Arrays.asList(cat4));
+		p18.getCategorias().addAll(Arrays.asList(cat5));
+		p19.getCategorias().addAll(Arrays.asList(cat6));
+		p20.getCategorias().addAll(Arrays.asList(cat6));
+		p21.getCategorias().addAll(Arrays.asList(cat7));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21));
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
