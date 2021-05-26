@@ -3,17 +3,17 @@ package com.TauanOliveira.cursoMC.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.stereotype.Service;
-
 import com.TauanOliveira.cursoMC.domain.Categoria;
 import com.TauanOliveira.cursoMC.domain.Produto;
 import com.TauanOliveira.cursoMC.repositories.CategoriaRepository;
 import com.TauanOliveira.cursoMC.repositories.ProdutoRepository;
 import com.TauanOliveira.cursoMC.services.exception.ObjectNotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ProdutoService {
@@ -35,7 +35,7 @@ public class ProdutoService {
 	}
 
 	public Page<Produto> search(String nome, List<Integer> ids, Integer page, Integer linesPerPage, String orderBy, String direction){
-		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);//new PageRequest(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		List<Categoria> categorias = categoriaRepository.findAllById(ids);
 		return produtoRepository.search(nome, categorias, pageRequest);
 	}

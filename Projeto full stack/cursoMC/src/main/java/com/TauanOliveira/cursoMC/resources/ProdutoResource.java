@@ -1,7 +1,6 @@
 package com.TauanOliveira.cursoMC.resources;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.TauanOliveira.cursoMC.domain.Produto;
 import com.TauanOliveira.cursoMC.dto.ProdutoDTO;
@@ -31,13 +30,6 @@ public class ProdutoResource {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<ProdutoDTO>> findAll() {
-		List<Produto> list = service.findAll();
-		List<ProdutoDTO> listDTO = list.stream().map( obj -> new ProdutoDTO(obj)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
-	}
-
-	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<Page<ProdutoDTO>> findPage(
 			@RequestParam(value= "nome", defaultValue= "") String nome,
 			@RequestParam(value= "categorias", defaultValue= "") String categorias,
@@ -45,7 +37,7 @@ public class ProdutoResource {
 			@RequestParam(value= "linesPerPage", defaultValue= "24") Integer linesPerPage,
 			@RequestParam(value= "orderBy", defaultValue= "nome") String orderBy,
 			@RequestParam(value= "direction", defaultValue= "ASC") String direction) {
-				String nomeDecoded = URL.decodeParam(nome);
+		String nomeDecoded = URL.decodeParam(nome);
 		List<Integer> ids = URL.decodeIntList(categorias);
 		Page<Produto> list = service.search(nomeDecoded, ids, page, linesPerPage, orderBy, direction);
 		Page<ProdutoDTO> pageDTO = list.map( obj -> new ProdutoDTO(obj));
