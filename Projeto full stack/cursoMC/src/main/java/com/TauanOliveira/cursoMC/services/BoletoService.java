@@ -5,6 +5,9 @@ import java.util.Date;
 
 import com.TauanOliveira.cursoMC.domain.PagamentoComBoleto;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class BoletoService {
  
     public void preencherPagamentoComBoleto(PagamentoComBoleto pagto, Date instanteDoPedido){
