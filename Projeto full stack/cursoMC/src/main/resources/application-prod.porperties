@@ -1,8 +1,0 @@
-spring.datasource.url=postgres://tfwgfodrabayyq:ac3006d1d59b15e73f52bd4d45fc21d669a2a1c1f2289c7b4d53d17faa072fb9@ec2-54-158-232-223.compute-1.amazonaws.com:5432/d4ic43l01g5f7g
-
-spring.jpa.hibernate.ddl-auto=none
-spring.jpa.show-sql=false
-spring.jpa.properties.hibernate.format_sql=false
-
-java -Dserver.port=$PORT -Dspring.profiles.active=prod $JAVA_OPTS -jar
-target/cursoMC-0.0.1-SNAPSHOT.jar
