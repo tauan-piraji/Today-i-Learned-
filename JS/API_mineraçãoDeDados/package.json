@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "Tauan oliveira Da Silva",
+  "author": "Tauan oliveira",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
